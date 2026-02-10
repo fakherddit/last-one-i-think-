@@ -16,6 +16,8 @@ class SessionTitle:
         suffix (str): Optional suffix for additional context
     """
     
+    DEFAULT_TITLE = "Untitled Session"
+    
     def __init__(self, prefix: str = "", main: str = "", suffix: str = ""):
         """
         Initialize a SessionTitle instance.
@@ -47,7 +49,7 @@ class SessionTitle:
         if self.suffix:
             parts.append(f"({self.suffix})")
         
-        return " ".join(parts) if parts else "Untitled Session"
+        return " ".join(parts) if parts else self.DEFAULT_TITLE
     
     def __repr__(self) -> str:
         """Return a developer-friendly representation."""
